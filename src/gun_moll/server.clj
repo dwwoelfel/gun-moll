@@ -53,6 +53,7 @@
         xml/emit-str)))
 
 (defroutes all-routes
+  (GET "/" [] (fn [req] {:status 200 :body "<html><body><p>Get an rss feed of Hacker News comments for any user.</p> <p>Point your rss reader at http://gun-moll.herokuapp.com/threads?id=HN-USERNAME.</p> <p>For example, to get an rss feed for patio11: http://gun-moll.herokuapp.com/threads?id=patio11</p></body></html>"}))
   (GET "/ping" [] (fn [req] {:status 200 :body "pong"}))
   (GET "/threads" [id] [] (fn [req]
                             (log/infof "Fetching threads for %s" id)
