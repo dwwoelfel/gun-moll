@@ -44,7 +44,7 @@
                :xmlns:dc "http://purl.org/dc/elements/1.1/"
                :xmlns:sy "http://purl.org/rss/1.0/modules/syndication/"}
          [:channel
-          [:title (format "Hacker News comments by %s" login)]
+          [:title (format "%s's comments on Hacker News" login)]
           [:link (format "http://gun-moll.herokuapp.com/threads?id=%s" login)]
           [:description (format "Hacker News comments by %s" login)]
           (for [thread threads]
