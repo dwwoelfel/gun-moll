@@ -32,7 +32,10 @@
      [:link link]
      [:description (:comment_text thread)]
      [:author (:author thread)]
-     [:pubDate (->> thread :created_at format/parse (format/unparse (format/formatters :rfc822)))]
+     [:pubDate (->> thread
+                    :created_at
+                    format-time/parse
+                    (format-time/unparse (format-time/formatters :rfc822)))]
      [:guid {:isPermaLink "true"} link]]))
 
 (defn generate-rss [login]
