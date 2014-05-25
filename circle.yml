@@ -1,0 +1,9 @@
+test:
+  override:
+    - lein compile :all
+
+deployment:
+  production:
+    branch: master
+    heroku:
+      appname: gun-moll
