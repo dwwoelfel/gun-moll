@@ -15,8 +15,8 @@
 
 (defn init []
   (let [rolling-policy (doto (TimeBasedRollingPolicy.)
-                         (.setActiveFileName  "hook-handler.log" )
-                         (.setFileNamePattern "hook-handler-%d{yyyy-MM-dd}.log.gz")
+                         (.setActiveFileName  "gun-moll.log" )
+                         (.setFileNamePattern "gun-moll-%d{yyyy-MM-dd}.log.gz")
                          (.activateOptions))
         log-appender (doto (RollingFileAppender.)
                        (.setRollingPolicy rolling-policy)

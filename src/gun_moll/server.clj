@@ -55,6 +55,7 @@
 (defroutes all-routes
   (GET "/ping" [] (fn [req] {:status 200 :body "pong"}))
   (GET "/threads" [id] [] (fn [req]
+                            (log/info "Fetching threads for %s" id)
                             (validate-login id)
                             {:status 200 :body (generate-rss id)
                              :headers {"Content-Type" "application/rss+xml"}})))
