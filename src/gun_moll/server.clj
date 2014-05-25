@@ -28,7 +28,7 @@
 (defn thread->rss [thread]
   (let [link (format "https://news.ycombinator.com/item?id=%s" (:objectID thread))]
     [:item
-     [:title (format "HN comment by %s" (:author thread))]
+     [:title (format "HN comment on %s" (:story_title thread))]
      [:link link]
      [:description (:comment_text thread)]
      [:author (:author thread)]
