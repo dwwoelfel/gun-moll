@@ -59,7 +59,7 @@
                             (log/infof "Fetching threads for %s" id)
                             (validate-login id)
                             {:status 200 :body (generate-rss id)
-                             :headers {"Content-Type" "application/rss+xml"}})))
+                             :headers {"Content-Type" "application/xml"}})))
 
 (defn port []
   (cond (System/getenv "HTTP_PORT") (Integer/parseInt (System/getenv "HTTP_PORT"))
