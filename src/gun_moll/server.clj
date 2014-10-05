@@ -30,7 +30,7 @@
     [:item
      [:title (format "HN comment on %s" (:story_title thread))]
      [:link link]
-     [:description (:comment_text thread)]
+     [:description (string/replace (:comment_text thread) "\\n" "\n")]
      [:author (:author thread)]
      [:pubDate (->> thread
                     :created_at
