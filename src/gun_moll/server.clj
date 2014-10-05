@@ -53,7 +53,7 @@
         xml/emit-str)))
 
 (defroutes all-routes
-  (GET "/" [] (fn [req] {:status 200 :body "<html><head><title>Gun Moll -- RSS Feeds for your Favorite Hacker News Commenters</title></head><body><p>Gun Moll gives you an RSS feed of Hacker News comments for your favorite HN commenters.</p> <p>Point your rss reader at http://gun-moll.herokuapp.com/threads?id=HN-USERNAME</p> <p>For example, to get an rss feed for patio11: <a href='http://gun-moll.herokuapp.com/threads?id=patio11'>http://gun-moll.herokuapp.com/threads?id=patio11</a></p><p>If you want to run your own sever, the <a href='https://github.com/dwwoelfel/gun-moll'>code is on GitHub</a>. Just fork it, change the app name in the circle.yml, and follow your fork on CircleCI</p></body></html>"}))
+  (GET "/" [] (fn [req] {:status 200 :body "<html><head><title>Gun Moll -- RSS Feeds for your Favorite Hacker News Commenters</title></head><body><p>Gun Moll gives you an RSS feed of Hacker News comments for your favorite HN commenters.</p> <p>Point your rss reader at http://gun-moll.herokuapp.com/threads?id=HN-USERNAME</p> <p>For example, to get an rss feed for patio11: <a href='http://gun-moll.herokuapp.com/threads?id=patio11'>http://gun-moll.herokuapp.com/threads?id=patio11</a></p><p>If you want to run your own sever, the <a href='https://github.com/dwwoelfel/gun-moll'>code is on GitHub</a>. Just fork it, change the app name in the circle.yml, and follow your fork on <a href='https://circleci.com'>CircleCI</a>.</p></body></html>"}))
   (GET "/ping" [] (fn [req] {:status 200 :body "pong"}))
   (GET "/threads" [id] [] (fn [req]
                             (log/infof "Fetching threads for %s" id)
